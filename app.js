@@ -18,7 +18,6 @@
 // document.write("String: "+string+"<br/>");
 // document.write("Index of 'n': "+index);
 
-
 // // 4. Write a program to find the last index of letter “l” in the word “Hello World” and display the result in your browser .
 
 // var string = ("Hello word");
@@ -324,53 +323,138 @@
 
 // // 2. Write a program that alerts the current month in words.
 // // For example December.
-// // 3. Write a program that alerts the first 3 letters of the current
-// // day, for example if today is Sunday then alert will show
-// // Sun.
-// // 4. Write a program that displays a message “It’s Fun day” if
-// // its Saturday or Sunday today.
-// // Page 1 of 5DATE METHODS | JAVASCRIPT
-// // 5. Write a program that shows the message “First fifteen
-// // days of the month” if the date is less than 16 th of the month
-// // else shows “Last days of the month”.
-// // 6. Write a program that determines the minutes since
-// // midnight, Jan. 1, 1970 and assigns it to a variable that
-// // hasn't been declared beforehand. Use any variable you like
-// // to represent the Date object.
-// // 7. Write a program that tests whether it's before noon and
-// // alert “Its AM” else “its PM”.
-// // Page 2 of 5DATE METHODS | JAVASCRIPT
-// // 8. Write a program that creates a Date object for the last day
-// // of the last month of 2020 and assigns it to variable named
-// // laterDate.
-// // 9. Create a date object of the starting date of this Ramadan
-// // and alert the number of days past since 1 st Ramadan?
-// // Note: 1 st Ramadan was on June 18, 2015
-// // 10. Write a program that displays in your browser the
-// // seconds that elapsed between the reference date and the
-// // beginning of 2015.
-// // Page 3 of 5DATE METHODS | JAVASCRIPT
-// // 11. Create a Date object for the current date and time.
-// // Extract the hours, reset the date object an hour ahead and
-// // finally display the date object in your browser.
+
+// var months=["january","february","march","april","may","june","july","august","september","october","november","december"];
+// var x=new Date();
+// indexOfMonth=x.getMonth();
+// current_month=months[indexOfMonth];
+// alert(current_month);
+
+// // 3. Write a program that alerts the first 3 letters of the current day, for example if today is Sunday then alert will show Sun.
+
+// var x=new Date();
+// var y=x.toString();
+// var day=y.slice(0,3);
+// document.write("today is :"+day);
+
+// // 4. Write a program that displays a message “It’s Fun day” if its Saturday or Sunday today.
+
+// var months=["sun","mon","tue","wed","thu","fri","sat"];
+// var x=new Date();
+// indexOfDay=x.getDay();
+// current_day=months[indexOfDay];
+// alert("today is : "+current_day);
+// switch(current_day)
+// {
+//     case months[0]:
+//         {
+//             alert("its fun day");
+//         }
+//         break;
+//     case months[6]:
+//         {
+//             alert("its fun day");
+//         }
+//         break;
+// }
+
+
+// // 5. Write a program that shows the message “First fifteen days of the month” if the date is less than 16 th of the month else shows “Last days of the month”.
+
+// var x=new Date();
+// Date=x.getDate();
+// alert("date of today is : "+Date);
+// if(Date<16)
+// {
+//     alert("first fifteen days of the month");
+// }
+// else
+// {
+//     alert("last days of month");
+// }
+
+
+// // 6. Write a program that determines the minutes since midnight, Jan. 1, 1970 and assigns it to a variable that hasn't been declared beforehand. Use any variable you like to represent the Date object.
+
+// var current_date=new Date();
+// document.write("current date :"+current_date+"</br>");
+// var miliseconds=current_date.getTime();
+// document.write("elapsed miliseconds since january 1,1970:  "+miliseconds+"</br>");
+// var minutes=miliseconds/1000*60;
+// document.write("elapsed minutes since january 1,1970 : "+minutes+"</br>");
+
+
+// // 7. Write a program that tests whether it's before noon and alert “Its AM” else “its PM”.
+
+// var x=new Date();
+// var y=x.toString();
+// console.log(y);
+// var time=y.slice(15,24);
+// console.log(time);
+// if(x < 12)
+// {
+//     console.log("its am!") 
+// }
+// else 
+// {
+//     console.log("ITS pm!")
+// }
+
+
+// // 8. Write a program that creates a Date object for the last day of the last month of 2020 and assigns it to variable named laterDate.
+
+// var date=new Date("Dec,31 2020");
+// alert(date);
+
+
+
+// // 9. Create a date object of the starting date of this Ramadan and alert the number of days past since 1 st Ramadan? Note: 1 st Ramadan was on June 18, 2015
+
+// var date=new Date("june,18 2015");
+// var miliseconds=date.getTime();
+// var nowDate=new Date();
+// var nowMiliSeconds=nowDate.getTime();
+// total_miliseconds= nowMiliSeconds-miliseconds;
+//  var days=total_miliseconds/(1000*60*60*24);
+//  document.write("<b>"+Math.floor(days)+"</b>"+" days have been passed since 1st ramadan,2015");
+
+
+
+// // 10. Write a program that displays in your browser the seconds that elapsed between the reference date and the beginning of 2015.
+
+// var refdate=new Date("Dec,05 2015");
+// document.write(refdate+"</br>");
+// var miliseconds=refdate.getTime();
+// var seconds=miliseconds/1000;
+// var date=new Date("jan,01 2015");
+// var datemiliseconds=date.getTime();
+// var dateseconds=datemiliseconds/1000;
+// var seconds_left=seconds-dateseconds;
+// document.write(seconds_left+" seconds left since the begining of 2015");
+
+
+// // 11. Create a Date object for the current date and time. Extract the hours, reset the date object an hour ahead and finally display the date object in your browser.
+
+// var day=new Date();
+// document.write(day+"</br>");
+// var hour=day.getHours();
+// var aheadhours=hour-1;
+// var newdate=day.setHours(aheadhours+"</br>");
+// document.write("1 hour ago, it was "+newdate);
+
+
+
 // // 12. Write a program that creates a date object and show the
 // // date in an alert box that is reset to 100 years back?
-// // 13. Write a program to ask the user about his age. Calculate
-// // and show his birth year in your browser.
-// // 14. Write a program to generate your K-Electric bill in your
-// // browser. All the amounts should be rounded off to 2
-// // decimal places. Display the following fields:
-// // a. Customer Name
-// // b. Current Month
-// // Page 4 of 5DATE METHODS | JAVASCRIPT
-// // c. Number of units
-// // d. Charges per unit
-// // e. Net Amount Payable (within Due Date)
-// // f. Late Payment Surcharge
-// // g. Gross Amount Payable (after Due Date)
-// // Where,
-// // Net Amount Payable (within Due Date) = Number of units * Charges per unit
-// // & Gross Amount Payable (after Due Date) = Net Amount + Late Payment Surcharge
+
+// var date=new Date();
+//  document.write(date+"</br>");
+//  var years=date.getFullYear();
+//  var aheadyear=years-100;
+//  var newdate=date.setFullYear(aheadyear+"</br>");
+//  document.write("100 years ago, it was "+newdate);
+
+
 
 
 

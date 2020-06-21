@@ -18,6 +18,7 @@
 // document.write("String: "+string+"<br/>");
 // document.write("Index of 'n': "+index);
 
+
 // // 4. Write a program to find the last index of letter “l” in the word “Hello World” and display the result in your browser .
 
 // var string = ("Hello word");
